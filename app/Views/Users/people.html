@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 50px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        .button {
+            background-color: gray;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 5px 26px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div class="nav">
+    <div style="display: inline-block">
+        <form method="get" action="/friendRequests">
+            <button class="button" type="submit">Friend Requests</button>
+        </form>
+    </div>
+    <div style="display: inline-block">
+        <form method="get" action="/friends">
+            <button class="button" type="submit">Friends</button>
+        </form>
+    </div>
+    <div style="display: inline-block">
+        <form method="get" action="/articles">
+            <button class="button" type="submit">Back</button>
+        </form>
+    </div>
+</div>
+<div style="display: flex; align-items: center; justify-content: center; min-height: 90vh;">
+    <div style="display: inline-block; margin-right: 20px;">
+        {% for info in userInfo %}
+            <p style="display: inline-block;">{{ info.name }} | {{ info.surname }} | {{ info.birthday }} </p>
+        <br>
+        {% endfor %}
+    </div>
+    <div style="display: inline-block;">
+        {% for em in emailAndUser %}
+        <p style="display: inline-block; margin-right: 20px">{{ em.email }}</p>
+        <form style="display: inline-block" action="/add/{{ em.id }}" method="post">
+            <button class="button" type="submit">Add as Friend</button>
+        </form>
+        <br>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        .button {
+            background-color: gray;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 5px 26px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 30vh;
+        }
+        .back {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 30vh;
+        }
+    </style>
+</head>
+<body>
+<div class="back">
+    <form style="display: inline-block;" method="get" action="/all">
+        <button class="button" type="submit">Back</button>
+    </form>
+</div>
+<div class="main">
+    <h2>You are friends with : </h2>
+    <ul>
+        {% for friend in friends %}
+        <li> {{ friend }}</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

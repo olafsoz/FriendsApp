@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            background-color: gray;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 5px 26px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+    <div>
+        <form style="text-align: center" action="/users/register" class="form-signup" method="post">
+            <fieldset>
+                <legend>Sign Up</legend>
+                <div class="input-block">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name" required>
+                </div>
+                <div class="input-block">
+                    <label for="surname">Surname</label>
+                    <input id="surname" type="text" name="surname" required>
+                </div>
+                <div class="input-block">
+                    <label for="birthday">Birthday</label>
+                    <input id="birthday" type="date" name="birthday" required>
+                </div>
+                <div class="input-block">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="text" name="email" required>
+                </div>
+                <div class="input-block">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" required>
+                </div>
+            </fieldset>
+            <button class="button" type="submit" class="btn-signup" name="submit">Sign Up</button>
+        </form>
+        <form style="text-align: center" method="get" action="/users/login">
+            <button class="button" type="submit">Login</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

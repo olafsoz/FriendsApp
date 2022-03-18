@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <a style="text-decoration: none; color: blue;" href="/articles">Back</a>
+    <form method="post" action="/articles">
+        <label for="title">Title : </label><br>
+        <input type="text" id="title" name="title" value="{{ inputs.title }}"><br>
+        {% if errors.title %}
+        <p style="color:red;">
+            <small> {{ errors.title[0] }}</small><br>
+        </p>
+        {% endif %}
+        <label for="description">Description : </label><br>
+        <input style="width: 300px; height: 100px;" type="text" id="description" name="description" value="{{ inputs.description }}"><br>
+        {% if errors.description %}
+        <p style="color:red;">
+            <small> {{ errors.description[0] }}</small><br>
+        </p>
+        {% endif %}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

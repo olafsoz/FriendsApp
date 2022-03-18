@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <a style="text-decoration: none; color: blue;" href="/articles">Back</a>
+    <form style="width:200px" method="post" action="/articles/{{ article.id }}">
+        <label for="title">Title : </label><br>
+        <input type="text" id="title" name="title" value="{{ article.title }}"><br>
+        <label for="description">Description : </label><br>
+        <input style="width: 300px; height: 100px;" type="text" id="description" name="description" value="{{ article.description }}"><br>
+        <button type="submit">Edit</button>
+    </form>
+{% endblock %}
